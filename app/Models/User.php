@@ -42,4 +42,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the role that owns the comment.
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function hasRole($roleName){
+        return $this->role()->select('id')->where('name',$roleName)->first();
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Auth;
 
 use App\Providers\RouteServiceProvider;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -22,6 +23,30 @@ class Login extends Component
         'password' => ['required'],
     ];
 
+    public function mount()
+    {
+        $this->redirectPath();
+    }
+
+    /**
+     * @return RedirectResponse|null
+     */
+    public function redirectPath()
+    {
+        if(Auth::check())
+        {
+            if(Auth::user()->hasRole('admin')){
+
+                return redirect()->route('admin.dashboard');
+
+            }else{
+
+                return redirect()->route('home');
+
+            }
+        }
+    }
+
     public function authenticate()
     {
         $this->validate();
@@ -32,7 +57,9 @@ class Login extends Component
             return;
         }
 
-        return redirect()->intended(route('home'));
+        $this->redirectPath();
+
+//        return redirect()->intended(route('home'));
     }
 
     public function render()
