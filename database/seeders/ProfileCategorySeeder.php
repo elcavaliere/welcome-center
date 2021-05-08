@@ -18,8 +18,8 @@ class ProfileCategorySeeder extends Seeder
 
             ['name' =>'orphan'],
             ['name' => 'handicapped'],
-            ['name' => 'elderly_person'],
-            ['name' =>'vulnerable_people']
+            ['name' => 'elderly person'],
+            ['name' =>'vulnerable people']
 
         ];
 

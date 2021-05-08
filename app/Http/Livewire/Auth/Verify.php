@@ -11,7 +11,7 @@ class Verify extends Component
     public function resend()
     {
         if (Auth::user()->hasVerifiedEmail()) {
-            redirect(route('home'));
+            $this->redirectPath();
         }
 
         Auth::user()->sendEmailVerificationNotification();
@@ -19,6 +19,22 @@ class Verify extends Component
         $this->emit('resent');
 
         session()->flash('resent');
+    }
+
+    public function redirectPath()
+    {
+        if(Auth::check())
+        {
+            if(Auth::user()->hasRole('admin')){
+
+                return redirect()->route('admin.dashboard');
+
+            }else{
+
+                return redirect()->route('home');
+
+            }
+        }
     }
 
     public function render()

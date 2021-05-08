@@ -24,6 +24,6 @@ class Profile extends Model
      */
     public function category()
     {
-        return $this->belongsTo(ProfileCategory::class);
+        return $this->belongsTo(ProfileCategory::class,'profile_category_id');
     }
 }

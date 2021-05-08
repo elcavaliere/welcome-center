@@ -25,8 +25,8 @@ class UserSeeder extends Seeder
         $profile_categories = [
             'orphan',
              'handicapped',
-             'elderly_person',
-            'vulnerable_people'
+             'elderly person',
+            'vulnerable people'
         ];
 
         for ($i=0; $i<10; $i++){

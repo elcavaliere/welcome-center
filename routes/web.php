@@ -9,6 +9,9 @@ use App\Http\Livewire\Auth\Passwords\Email;
 use App\Http\Livewire\Auth\Passwords\Reset;
 use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
+use App\Http\Livewire\Trainees\Create;
+use App\Http\Livewire\Trainees\Index;
+use App\Http\Livewire\Trainees\Profile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,16 +31,12 @@ Route::middleware('guest')->group(function () {
 
     Route::get('login', Login::class)
         ->name('login');
-
+    Route::get('email/verify/{id}/{hash}', EmailVerificationController::class)
+        ->middleware('signed')
+        ->name('verification.verify');
 //    Route::get('register', Register::class)
 //        ->name('register');
 });
-
-Route::get('password/reset', Email::class)
-    ->name('password.request');
-
-Route::get('password/reset/{token}', Reset::class)
-    ->name('password.reset');
 
 Route::middleware('auth')->group(function () {
     Route::get('email/verify', Verify::class)
@@ -48,17 +47,25 @@ Route::middleware('auth')->group(function () {
         ->name('password.confirm');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('email/verify/{id}/{hash}', EmailVerificationController::class)
-        ->middleware('signed')
-        ->name('verification.verify');
+Route::middleware('verified')->group(function () {
+
 
     Route::post('logout', LogoutController::class)
         ->name('logout');
+
+    Route::get('/profile/{profile}', Profile::class)->name('users.profile');
+
+    Route::get('password/reset', Email::class)
+        ->name('password.request');
+
+    Route::get('password/reset/{token}', Reset::class)
+        ->name('password.reset');
 });
 
 Route::prefix('admin')->middleware(['auth','auth.admin'])->group(function (){
 
     Route::get('/dashboard', Dashboard::class)->name('admin.dashboard');
+    Route::get('/trainees', Index::class)->name('trainees.index');
+    Route::get('/trainees/create', Create::class)->name('trainees.create');
 
 });
