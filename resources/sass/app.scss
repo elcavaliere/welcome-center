@@ -18,6 +18,9 @@
     box-shadow: none;
 }
 
+
+
+
 /**
  * This injects any component classes registered by plugins.
  */
@@ -33,6 +36,12 @@
  * .btn { ... }
  * .form-input { ... }
  */
+
+*{
+    //font-family: 'Exo', sans-serif;
+    font-family: 'Exo 2', sans-serif;
+    //font-family: 'JetBrains Mono', monospace;
+}
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
