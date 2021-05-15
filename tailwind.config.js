@@ -24,6 +24,17 @@ module.exports = {
                     'light-gray': `var(--color-light-gray)`,
                     'gray-bg': `var(--color-gray-bg)`,
                 }
+            },
+            borderColor: {
+                skin: {
+                    'dark-blue': `var(--color-dark-blue)`,
+                    'light-blue': `var(--color-light-blue)`,
+                    'dark-orange': `var(--color-dark-orange)`,
+                    'light-orange': `var(--color-light-orange)`,
+                    'light-orange-secondary': `var(--color-light-orange-secondary)`,
+                    'light-gray': `var(--color-light-gray)`,
+                    'gray-bg': `var(--color-gray-bg)`,
+                }
             }
         },
     },

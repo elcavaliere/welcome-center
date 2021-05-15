@@ -1,6 +1,10 @@
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
 body{
-    //background-color: #8b98a5 !important;
     @apply bg-skin-gray-bg;
+}
+a{
+    @apply m-0 p-0;
 }
 .form-container{
     @apply py-8;
@@ -90,15 +94,19 @@ body{
 
 .app{
     .app-top-bar{
-        @apply border-b-2 border-gray-300;
+        @apply bg-white;
 
         .wrapper{
             @apply w-11/12 mx-auto flex flex-row justify-between items-center;
+
+            .app-logo{
+                @apply font-black text-skin-dark-blue text-lg py-5;
+            }
             .app-nav{
-                @apply  flex flex-row space-x-4 items-center;
+                @apply  hidden flex flex-row space-x-4 items-stretch;
 
                 >.item{
-                    @apply relative py-4 cursor-pointer;
+                    @apply relative py-4 cursor-pointer flex flex-col justify-center;
                     .menu{
                         @apply hidden absolute top-full left-0 bg-white shadow-md w-48;
                         .item{
@@ -119,6 +127,62 @@ body{
                     &:hover{
                         .menu{
                             @apply block;
+                        }
+                    }
+                }
+            }
+            .app-right-nav{
+                @apply flex flex-row items-stretch space-x-3;
+                .item{
+                    @apply relative px-1.5 flex flex-col justify-center cursor-pointer;
+                    .menu{
+                        @apply  absolute right-0 top-full bg-skin-light-gray shadow-md w-48 rounded;
+                        .item{
+                            @apply px-4 cursor-pointer flex flex-row items-center p-0;
+                            &:first-child{
+                               a{
+                                   @apply border-t-0;
+                               }
+                            }
+                            a{
+                                @apply border-t border-skin-gray-bg block m-0 w-full py-2 text-skin-dark-blue font-semibold flex-1 text-sm;
+                            }
+                            .icon{
+                                @apply text-lg text-white pl-4;
+                            }
+                            &:hover{
+                                @apply bg-skin-gray-bg text-gray-900;
+                                .icon{
+                                    @apply text-skin-dark-orange;
+                                }
+                            }
+                            &.logout-btn{
+                                @apply bg-skin-dark-orange rounded-b justify-between px-0  items-stretch;
+                                .icon{
+                                    @apply bg-skin-light-orange px-4 rounded-br flex flex-col justify-center;
+                                }
+                                .text{
+                                    @apply py-1.5 text-center flex-1 text-white font-semibold text-sm;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover{
+                        .menu{
+                            @apply block;
+                        }
+                    }
+                    .icon{
+                        @apply relative text-2xl text-skin-light-orange;
+                        .count{
+                            @apply absolute bg-skin-light-orange font-semibold rounded-full text-center text-white;
+                            height: 22px;
+                            width: 22px;
+                            font-size: 11px;
+                            line-height: 22px;
+                            top: -4px;
+                            left: -11px;
                         }
                     }
                 }

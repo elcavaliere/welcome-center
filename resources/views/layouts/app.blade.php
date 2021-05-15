@@ -69,14 +69,56 @@
                             <a href="{{ route('fundings.index') }}">Funding</a>
                         </div>
                     </nav>
-                    <nav class="app-right-nav flex flex-row items-center space-x-3">
+                    <nav class="app-right-nav ">
                         <div class="item cursor-pointer">
-                            notifications
+                            <span class="icon">
+                                <i class="far fa-bell"></i>
+                                <span class="count">
+                                    12
+                                </span>
+                            </span>
                         </div>
-                        <div class="item cursor-pointer user">
+                        <div class="item user-nav">
                             <div class="user-avatar w-8 h-8 rounded-full bg-gray-300">
 
                             </div>
+                            <div class="menu">
+                                <div class="item">
+                                    <a href="">My profile</a>
+                                    <span class="icon">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                                <div class="item">
+                                    <a href="">
+                                        Edit profile
+                                    </a>
+                                    <span class="icon">
+                                        <i class="fas fa-user-cog"></i>
+                                    </span>
+                                </div>
+                               @if(Auth::user()->hasRole('admin'))
+                                    <div class="item">
+                                        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                        <span class="icon">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                        </span>
+                                    </div>
+                                @endif
+                                <div class="item logout-btn">
+                                    <span class="text">
+                                        Log Out
+                                    </span>
+                                    <span class="icon">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item toggle-menu">
+                            <span class="icon">
+                                <i class="fas fa-bars"></i>
+                            </span>
                         </div>
                     </nav>
                 @endauth
