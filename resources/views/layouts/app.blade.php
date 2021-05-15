@@ -150,7 +150,9 @@
                </div>
            </div>
         </section>
+        <main class="app-main-content">
             @yield('content')
+        </main>
     </div>
 
     @isset($slot)

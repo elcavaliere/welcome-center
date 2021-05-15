@@ -103,7 +103,7 @@ a{
                 @apply font-black text-skin-dark-blue text-lg py-5;
             }
             .app-nav{
-                @apply  hidden flex flex-row space-x-4 items-stretch;
+                @apply  hidden space-x-4 items-stretch;
 
                 >.item{
                     @apply relative py-4 cursor-pointer flex flex-col justify-center;
@@ -192,6 +192,13 @@ a{
                     }
                 }
             }
+
+            @media (min-width: 768px) {
+                @apply w-10/12;
+                .app-nav{
+                    @apply flex flex-row;
+                }
+            }
         }
 
     }
@@ -208,10 +215,50 @@ a{
             .app-hero-breadcrumbs{
                 @apply flex flex-row items-center space-x-2.5;
                 .item{
-                    @apply flex flex-col justify-center font-medium text-sm text-skin-light-gray;
+                    @apply block flex flex-col justify-center font-medium text-sm text-skin-light-gray;
                 }
                 .icon{
                     @apply flex flex-col justify-center text-xs;
+                }
+            }
+
+            @media (min-width: 760px) {
+                @apply py-16 space-y-4;
+                .app-hero-title{
+                    @apply text-4xl;
+                }
+                .app-hero-breadcrumbs{
+                    @apply space-x-3.5;
+                    .item{
+                        @apply text-base;
+                    }
+                }
+            }
+        }
+    }
+    .app-main{
+        .wrapper{
+            @apply mx-auto w-full lg:w-10/12;
+            .dashboard-overview{
+                .header{
+                    @apply text-2xl font-semibold pb-3 text-skin-dark-blue;
+                }
+                .stats{
+                    @apply grid grid-rows-3 grid-flow-col lg:grid-rows-2 divide-x divide-y divide-gray-100;
+                    .item{
+                        @apply bg-white p-3 lg:px-6 lg:py-4 flex flex-row items-start space-x-2.5 lg:space-x-6;
+                        .icon{
+                            @apply text-white inline-block bg-skin-light-blue py-2 px-4 rounded;
+                        }
+                        .content{
+                            .header{
+                                @apply m-0 p-0 text-base font-medium text-skin-light-gray;
+                            }
+                            .count{
+                                @apply m-0 p-0 text-lg font-black text-skin-dark-blue;
+                            }
+                        }
+                    }
                 }
             }
         }
