@@ -2,9 +2,6 @@
 
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <a href="{{ route('home') }}">
-            <x-logo class="w-auto h-16 mx-auto text-indigo-600" />
-        </a>
 
         <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
             Sign in to your account
@@ -20,8 +17,8 @@
     </div>
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div class="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
-            <form wire:submit.prevent="authenticate">
+        <div class="px-4 py-8 bg-white sm:rounded-lg sm:px-10">
+            <form wire:submit.prevent="authenticate" autocomplete="off">
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 leading-5">
                         Email address

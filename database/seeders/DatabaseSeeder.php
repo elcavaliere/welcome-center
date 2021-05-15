@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,10 +15,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-           RoleSeeder::class,
-           AdminSeeder::class,
-           ProfileCategorySeeder::class,
-           UserSeeder::class
+            RoleSeeder::class,
+            AdminSeeder::class,
+            ProfileCategorySeeder::class,
+            UserSeeder::class,
+            SponsorSeeder::class,
+            TrainingSeeder::class,
+            CompanySeeder::class,
+            FundHelpSeeder::class,
+            FundingSeeder::class,
+            FundHelpUserSeeder::class,
+            TrainingUserSeeder::class
         ]);
         // \App\Models\User::factory(10)->create();
     }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="laravelTinkerProject">
+    <option name="lastCode" value="&lt;?php&#10;&#10;$ids = [];&#10;&#10;\App\Models\Training::select(['id'])-&gt;get()-&gt;map(function  ($item,$k) use($ids) {&#10;    return $ids[] = $item;&#10;});&#10;&#10;dump($ids);" />
+  </component>
+</project>

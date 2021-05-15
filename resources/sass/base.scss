@@ -1,0 +1,141 @@
+body{
+    //background-color: #8b98a5 !important;
+    @apply bg-skin-gray-bg;
+}
+.form-container{
+    @apply py-8;
+    .form-aside{
+        .form-aside-header{
+            @apply px-4;
+            .header-title{
+                @apply text-lg font-medium leading-6 text-gray-900;
+            }
+            .header-text{
+                @apply mt-1 text-sm text-gray-600;
+            }
+        }
+    }
+
+    .form-body{
+        @apply mt-5;
+    }
+
+    .form-footer{
+        @apply px-4 py-3 bg-gray-50 text-right;
+    }
+
+    @media (min-width: 768px) {
+        @apply grid grid-cols-3 gap-6 w-2/3 mx-auto;
+
+        .form-aside{
+            @apply col-span-1;
+            .form-aside-header{
+
+            }
+        }
+
+        .form-body{
+            @apply mt-0 col-span-2 bg-white p-6;
+        }
+        .form-footer{
+
+        }
+    }
+
+    @media (min-width: 640px) {
+        .form-aside-header{
+            @apply px-0;
+        }
+        .form-footer{
+            @apply px-6;
+        }
+    }
+}
+
+.form-field{
+
+
+    label{
+        @apply block text-base capitalize font-semibold text-skin-dark-blue;
+    }
+    .input{
+        @apply border h-8 border-gray-300 mt-1 flex rounded-md;
+
+        input{
+            @apply flex-1 inline-block border-none rounded-l-md ;
+
+            &:focus{
+                @apply ring-indigo-500 border-indigo-500
+            }
+        }
+    }
+    .dropdown{
+
+    }
+
+    @media (min-width: 640px) {
+
+        .input{
+            input{
+                @apply text-sm;
+            }
+        }
+
+    }
+}
+
+.form-error{
+
+}
+
+.app{
+    .app-top-bar{
+        @apply border-b-2 border-gray-300;
+
+        .wrapper{
+            @apply w-11/12 mx-auto flex flex-row justify-between items-center;
+            .app-nav{
+                @apply  flex flex-row space-x-4 items-center;
+
+                >.item{
+                    @apply relative py-4 cursor-pointer;
+                    .menu{
+                        @apply hidden absolute top-full left-0 bg-white shadow-md w-48;
+                        .item{
+                            @apply border-b border-gray-100 cursor-pointer;
+                            &:last-child{
+                                @apply border-b-0;
+                            }
+                            a{
+                                @apply block w-full py-2 px-4 text-gray-700;
+
+                                &:hover{
+                                    @apply bg-gray-100 text-gray-900;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover{
+                        .menu{
+                            @apply block;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .app-hero{
+
+        .wrapper{
+            @apply p-6 w-10/12 mx-auto;
+            .app-hero-title{
+                @apply font-extrabold text-4xl text-skin-dark-blue text-center;
+            }
+            .app-hero-body{
+                @apply mx-auto text-center;
+            }
+        }
+    }
+}

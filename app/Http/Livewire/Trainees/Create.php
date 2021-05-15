@@ -75,7 +75,7 @@ class Create extends Component
 
         session()->flash('message', 'Trainee successfully created.');
 
-        return redirect()->back();
+        $this->reset(['trainee']);
     }
 
 

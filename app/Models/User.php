@@ -52,6 +52,14 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * Get the comments for the blog post.
+     */
+    public function fundsHelp()
+    {
+        return $this->hasMany(HelpFundUser::class);
+    }
+
+    /**
      * Get the profile associated with the user.
      */
     public function profile()

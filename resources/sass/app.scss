@@ -39,8 +39,9 @@
 
 *{
     //font-family: 'Exo', sans-serif;
-    font-family: 'Exo 2', sans-serif;
+    //font-family: 'Exo 2', sans-serif;
     //font-family: 'JetBrains Mono', monospace;
+    font-family: 'Quicksand', sans-serif;
 }
 
 /**
@@ -61,4 +62,17 @@
 
 [x-cloak] {
     display: none;
+}
+
+
+@layer base {
+    :root{
+        --color-dark-blue: #062540;
+        --color-light-blue: #98b9cb;
+        --color-dark-orange: #df532a;
+        --color-light-orange: #ff8a3b;
+        --color-light-orange-secondary: #f5decd;
+        --color-light-gray: #8b98a5;
+        --color-gray-bg: #f6f5f1;
+    }
 }

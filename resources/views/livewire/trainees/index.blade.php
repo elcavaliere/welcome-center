@@ -54,7 +54,7 @@
                                     Trainee
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium divide-x-2">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900 space-x-2">Edit</a>
+                                    <a href="{{ route('users.update-profile',['profile'=>$user->profile]) }}" class="text-indigo-600 hover:text-indigo-900 space-x-2">Edit</a>
                                     <a href="{{ route('users.profile',['profile'=>$user->profile]) }}" class="text-indigo-600 hover:text-indigo-900 space-x-2">Profile</a>
                                 </td>
                             </tr>
