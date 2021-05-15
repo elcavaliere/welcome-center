@@ -119,6 +119,9 @@
                             <span class="icon">
                                 <i class="fas fa-bars"></i>
                             </span>
+                            <div class="menu">
+
+                            </div>
                         </div>
                     </nav>
                 @endauth
@@ -133,6 +136,7 @@
         </section>
         <section class="app-hero">
            <div class="wrapper">
+               @yield('app-hero-breadcrumbs')
                <h2 class="app-hero-title">
                    @yield('app-hero-title')
                </h2>

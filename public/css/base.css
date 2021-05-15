@@ -6362,6 +6362,7 @@ a {
 .app .app-top-bar .wrapper .app-right-nav .item .menu {
   background-color: var(--color-light-gray);
   border-radius: 0.25rem;
+  display: none;
   position: absolute;
   right: 0px;
   top: 100%;
@@ -6476,23 +6477,61 @@ a {
   left: -11px;
 }
 
-.app .app-hero .wrapper {
+@media (min-width: 768px) {
+  .app .app-top-bar .wrapper .app-right-nav .item.toggle-menu {
+    display: none;
+  }
+}
+
+.app .app-hero .wrapper > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
+.app .app-hero .wrapper{
+  display: flex;
+  flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  padding: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
   width: 83.333333%;
 }
 
 .app .app-hero .wrapper .app-hero-title {
   font-weight: 800;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  text-align: center;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   color: var(--color-dark-blue);
 }
 
-.app .app-hero .wrapper .app-hero-body {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+.app .app-hero .wrapper .app-hero-breadcrumbs > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.625rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.625rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.app .app-hero .wrapper .app-hero-breadcrumbs{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.app .app-hero .wrapper .app-hero-breadcrumbs .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-light-gray);
+}
+
+.app .app-hero .wrapper .app-hero-breadcrumbs .icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }

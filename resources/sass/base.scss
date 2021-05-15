@@ -136,7 +136,7 @@ a{
                 .item{
                     @apply relative px-1.5 flex flex-col justify-center cursor-pointer;
                     .menu{
-                        @apply  absolute right-0 top-full bg-skin-light-gray shadow-md w-48 rounded;
+                        @apply hidden absolute right-0 top-full bg-skin-light-gray shadow-md w-48 rounded;
                         .item{
                             @apply px-4 cursor-pointer flex flex-row items-center p-0;
                             &:first-child{
@@ -185,6 +185,11 @@ a{
                             left: -11px;
                         }
                     }
+                    &.toggle-menu{
+                        @media (min-width: 768px) {
+                            @apply hidden;
+                        }
+                    }
                 }
             }
         }
@@ -193,12 +198,21 @@ a{
     .app-hero{
 
         .wrapper{
-            @apply p-6 w-10/12 mx-auto;
+            @apply py-10 w-10/12 mx-auto flex flex-col space-y-3;
             .app-hero-title{
-                @apply font-extrabold text-4xl text-skin-dark-blue text-center;
+                @apply font-extrabold text-3xl text-skin-dark-blue;
             }
             .app-hero-body{
-                @apply mx-auto text-center;
+
+            }
+            .app-hero-breadcrumbs{
+                @apply flex flex-row items-center space-x-2.5;
+                .item{
+                    @apply flex flex-col justify-center font-medium text-sm text-skin-light-gray;
+                }
+                .icon{
+                    @apply flex flex-col justify-center text-xs;
+                }
             }
         }
     }
