@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
+use Carbon\Factory;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -74,4 +76,9 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getFullNameAttribute(){
         return $this->last_name.' '.$this->first_name ;
     }
+
+    public function getStatusAttribute(){
+        return $this->email_verified_at ? 'active' : 'inactive' ;
+    }
+
 }
